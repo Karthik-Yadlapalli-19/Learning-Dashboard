@@ -1,31 +1,31 @@
-//
-//  Learning_DashboardApp.swift
-//  Learning-Dashboard
-//
-//  Created by Karthik Yadlapalli on 07/10/26.
-//
-
 import SwiftUI
 import SwiftData
 
 @main
 struct Learning_DashboardApp: App {
-    var sharedModelContainer: ModelContainer = {
+    private let sharedModelContainer: ModelContainer
+    private let container: AppContainer
+
+    init() {
         let schema = Schema([
-            Item.self,
+            CourseEntity.self,
+            LessonEntity.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
         do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
+            sharedModelContainer = try ModelContainer(for: schema, configurations: [modelConfiguration])
         } catch {
             fatalError("Could not create ModelContainer: \(error)")
         }
-    }()
+
+        container = AppContainer(modelContext: sharedModelContainer.mainContext)
+    }
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
+                .environment(container)
         }
         .modelContainer(sharedModelContainer)
     }
