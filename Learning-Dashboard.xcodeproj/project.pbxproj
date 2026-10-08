@@ -32,6 +32,11 @@
 			path = "Learning-DashboardTests";
 			sourceTree = "<group>";
 		};
+		CB4F4579307758910003C59A /* Screenshots+Recording */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Screenshots+Recording";
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +56,7 @@
 		CB17621230767660000A1FA2 = {
 			isa = PBXGroup;
 			children = (
+				CB4F4579307758910003C59A /* Screenshots+Recording */,
 				CB17621D30767660000A1FA2 /* Learning-Dashboard */,
 				CB17628830768B79000A1FA2 /* Learning-DashboardTests */,
 				CB17621C30767660000A1FA2 /* Products */,
@@ -81,6 +87,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				CB17621D30767660000A1FA2 /* Learning-Dashboard */,
+				CB4F4579307758910003C59A /* Screenshots+Recording */,
 			);
 			name = "Learning-Dashboard";
 			productName = "Learning-Dashboard";
